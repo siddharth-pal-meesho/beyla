@@ -806,6 +806,19 @@ go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/internal/request
 go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/internal/semconv
 # go.opentelemetry.io/obi v0.10.0 => ./.obi-src
 ## explicit; go 1.25.11
+go.opentelemetry.io/obi/internal/test/integration/components/docker
+go.opentelemetry.io/obi/internal/test/integration/components/jaeger
+go.opentelemetry.io/obi/internal/test/integration/components/kube
+go.opentelemetry.io/obi/internal/test/integration/components/promtest
+go.opentelemetry.io/obi/internal/test/integration/components/testserver/grpc/client
+go.opentelemetry.io/obi/internal/test/integration/components/testserver/grpc/routeguide
+go.opentelemetry.io/obi/internal/test/integration/k8s/common
+go.opentelemetry.io/obi/internal/test/integration/k8s/common/testpath
+go.opentelemetry.io/obi/internal/test/integration/k8s/netolly
+go.opentelemetry.io/obi/internal/test/integration/k8s/netolly_multizone
+go.opentelemetry.io/obi/internal/test/tools
+go.opentelemetry.io/obi/internal/test/tools/img
+go.opentelemetry.io/obi/internal/test/weavercheck
 go.opentelemetry.io/obi/pkg/appolly
 go.opentelemetry.io/obi/pkg/appolly/app
 go.opentelemetry.io/obi/pkg/appolly/app/request
