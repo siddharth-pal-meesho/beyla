@@ -23,7 +23,7 @@ RUN OPERATOR_VERSION=$(cat version.txt) && \
     cat requirements.extra.txt >> requirements.txt
 
 # Get the Python SDK for glibc
-FROM python:3.14.6-trixie@sha256:55dd7c1ea6c2b2c45a26d797187706eb9e5e0046f8e54fd759e38647b505c36b AS build-python-glibc
+FROM python:3.14.7-trixie@sha256:2726708dbfe314177a32630382a594ef58a1628fa482ba77debff710ef71a437 AS build-python-glibc
 WORKDIR /operator-build
 COPY --from=prepare-python-deps /build/requirements.txt .
 COPY python/build_dep_tree.sh .
