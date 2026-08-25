@@ -1,0 +1,599 @@
+{
+  "built_against_sha": "b4da5978747b",
+  "built_at": "2026-08-25T07:58:00+00:00",
+  "by_file": {
+    "cmd/beyla-schema/main.go": {
+      "SchemaGenerator": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/07-BUILD-AND-VENDORING.md"
+      ]
+    },
+    "cmd/beyla/main.go": {
+      "loadConfig": [
+        "docs/wiki/pages/02-ENTRYPOINT.md"
+      ],
+      "logConfig": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/08-OPERATIONS.md"
+      ],
+      "main": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/08-OPERATIONS.md"
+      ]
+    },
+    "cmd/k8s-cache/main.go": {
+      "main": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md",
+        "docs/wiki/pages/07-BUILD-AND-VENDORING.md",
+        "docs/wiki/pages/kubernetes/k8s-metadata-cache-service.md",
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ]
+    },
+    "pkg/beyla/config.go": {
+      "49": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "Attributes": [
+        "docs/wiki/pages/03-CONFIGURATION.md"
+      ],
+      "Config": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/07-BUILD-AND-VENDORING.md",
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "Config.Enabled": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "Config.Validate": [
+        "docs/wiki/pages/03-CONFIGURATION.md"
+      ],
+      "Config.appO11yEnabled": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "Config.otelNetO11yEnabled": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "Config.otelStatsO11yEnabled": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "Config.promNetO11yEnabled": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "Config.promStatsO11yEnabled": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "DefaultConfig": [
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ],
+      "Feature": [
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "LoadConfig": [
+        "docs/wiki/pages/03-CONFIGURATION.md"
+      ],
+      "SDKInject": [
+        "docs/wiki/pages/03-CONFIGURATION.md"
+      ],
+      "normalizeConfig": [
+        "docs/wiki/pages/03-CONFIGURATION.md"
+      ]
+    },
+    "pkg/beyla/config_obi.go": {
+      "Config.AsOBI": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md",
+        "docs/wiki/pages/obi-integration/vendored-obi-boundary.md"
+      ],
+      "FromOBI": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ],
+      "OverrideOBIGlobalConfig": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/obi-integration/obi-global-overrides.md"
+      ],
+      "overrideOBI": [
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md",
+        "docs/wiki/pages/obi-integration/obi-global-overrides.md"
+      ]
+    },
+    "pkg/components/beyla.go": {
+      "RunBeyla": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "attributeGroups": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md"
+      ],
+      "buildCommonContextInfo": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md",
+        "docs/wiki/pages/kubernetes/k8s-metadata-cache-service.md"
+      ],
+      "buildServiceNameTemplate": [
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md"
+      ],
+      "internalMetrics": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/08-OPERATIONS.md"
+      ],
+      "normalizeConfig": [
+        "docs/wiki/pages/02-ENTRYPOINT.md"
+      ],
+      "setupAppO11y": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md"
+      ],
+      "setupNetO11y": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/obi-integration/vendored-obi-boundary.md"
+      ],
+      "setupStatsO11y": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/obi-integration/vendored-obi-boundary.md"
+      ],
+      "setupWebhook": [
+        "docs/wiki/pages/02-ENTRYPOINT.md"
+      ],
+      "startHealthCheck": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/08-OPERATIONS.md"
+      ]
+    },
+    "pkg/export/extraattributes/attr_defs.go": {
+      "NewBeylaAttrSelector": [
+        "docs/wiki/pages/05-EXPORTERS.md"
+      ]
+    },
+    "pkg/export/extraattributes/metric.go": {
+      "8": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/pipeline/process-metrics-subpipeline.md"
+      ]
+    },
+    "pkg/export/otel/connect_spans.go": {
+      "ConnectionSpanAttributes": [
+        "docs/wiki/pages/pipeline/cluster-connector-spans.md"
+      ],
+      "ConnectionSpansExport": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/pipeline/cluster-connector-spans.md"
+      ],
+      "GenerateConnectSpans": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/pipeline/cluster-connector-spans.md"
+      ],
+      "GroupConnectionSpans": [
+        "docs/wiki/pages/pipeline/cluster-connector-spans.md"
+      ]
+    },
+    "pkg/export/otel/metrics_survey.go": {
+      "SurveyInfoMetrics": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ],
+      "SurveyMetricsReporter": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/08-OPERATIONS.md",
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ],
+      "SurveyMetricsReporter.attrsFromService": [
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ],
+      "SurveyMetricsReporter.disassociatePIDFromService": [
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ],
+      "SurveyMetricsReporter.onProcessEvent": [
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ],
+      "SurveyMetricsReporter.setupPIDToServiceRelationship": [
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ],
+      "SurveyMetricsReporter.watchForProcessEvents": [
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ],
+      "newSurveyMetricsReporter": [
+        "docs/wiki/pages/telemetry/survey-info-metrics.md"
+      ]
+    },
+    "pkg/helpers/config/convert.go": {
+      "8": [
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ],
+      "Convert": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/03-CONFIGURATION.md",
+        "docs/wiki/pages/07-BUILD-AND-VENDORING.md",
+        "docs/wiki/pages/kubernetes/k8s-metadata-cache-service.md",
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ],
+      "convert": [
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ],
+      "convertStruct": [
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ],
+      "handleFieldConversion": [
+        "docs/wiki/pages/obi-integration/config-conversion-reflection.md"
+      ]
+    },
+    "pkg/internal/appolly/appolly.go": {
+      "Instrumenter": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md"
+      ],
+      "Instrumenter.FindAndInstrument": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md"
+      ],
+      "Instrumenter.ReadAndForward": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md"
+      ],
+      "Instrumenter.instrumentedEventLoop": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ],
+      "Instrumenter.stop": [
+        "docs/wiki/pages/02-ENTRYPOINT.md",
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/08-OPERATIONS.md"
+      ],
+      "New": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/pipeline/swarm-instancer-model.md"
+      ],
+      "newRuntimeMetricsQueue": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ],
+      "refreshK8sInformerCache": [
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md"
+      ],
+      "setupKubernetes": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md"
+      ]
+    },
+    "pkg/internal/discover/finder.go": {
+      "NewProcessFinder": [
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ],
+      "ProcessFinder": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ],
+      "ProcessFinder.IsInstrumentationEnabled": [
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ],
+      "ProcessFinder.Start": [
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ],
+      "ProcessFinder.connectSurveySubPipeline": [
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ]
+    },
+    "pkg/internal/discover/survey.go": {
+      "SurveyCriteriaMatcherProvider": [
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ],
+      "surveyCriteria": [
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ],
+      "surveyExcludingCriteria": [
+        "docs/wiki/pages/pipeline/process-discovery-and-survey.md"
+      ]
+    },
+    "pkg/internal/pipe/instrumenter.go": {
+      "Build": [
+        "docs/wiki/pages/01-ARCHITECTURE.md",
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/obi-integration/vendored-obi-boundary.md",
+        "docs/wiki/pages/pipeline/process-metrics-subpipeline.md",
+        "docs/wiki/pages/pipeline/swarm-instancer-model.md"
+      ],
+      "clusterConnectorsSubpipeline": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/pipeline/cluster-connector-spans.md",
+        "docs/wiki/pages/pipeline/swarm-instancer-model.md"
+      ],
+      "sigilExportSubpipeline": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/pipeline/swarm-instancer-model.md"
+      ]
+    },
+    "pkg/internal/pipe/proc_pipeline.go": {
+      "ProcessMetricsSwarmInstancer": [
+        "docs/wiki/pages/04-APPO11Y-PIPELINE.md",
+        "docs/wiki/pages/pipeline/process-metrics-subpipeline.md",
+        "docs/wiki/pages/pipeline/swarm-instancer-model.md"
+      ],
+      "isProcessSubPipeEnabled": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/pipeline/process-metrics-subpipeline.md",
+        "docs/wiki/pages/telemetry/feature-gating.md"
+      ]
+    },
+    "pkg/webhook/mutator.go": {
+      "NewPodMutator": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "PodMutator": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "PodMutator.CanInstrument": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "PodMutator.CanInstrumentLanguage": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "PodMutator.PreloadsSomethingElse": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "detectLanguageFromContainer": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "detectLanguageFromPodSpec": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "languageFromImageName": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ]
+    },
+    "pkg/webhook/server.go": {
+      "NewServer": [
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md",
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "Server": [
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md",
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "Server.On": [
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md",
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "Server.Start": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "Server.isMyNodeEvent": [
+        "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md",
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "Server.writeStateConfigMap": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ],
+      "loadOwnPod": [
+        "docs/wiki/pages/kubernetes/sdk-injection-webhook.md"
+      ]
+    },
+    "vendor/go.opentelemetry.io/obi/pkg/export/feature.go": {
+      "43": [
+        "docs/wiki/pages/telemetry/api-dependency-counter.md"
+      ]
+    },
+    "vendor/go.opentelemetry.io/obi/pkg/export/otel/api_dependency.go": {
+      "apiDepTracker": [
+        "docs/wiki/pages/05-EXPORTERS.md",
+        "docs/wiki/pages/telemetry/api-dependency-counter.md"
+      ],
+      "newAPIDepTracker": [
+        "docs/wiki/pages/07-BUILD-AND-VENDORING.md",
+        "docs/wiki/pages/telemetry/api-dependency-counter.md"
+      ]
+    }
+  },
+  "by_page": {
+    "docs/wiki/pages/01-ARCHITECTURE.md": [
+      "pkg/beyla/config.go:Config",
+      "pkg/beyla/config_obi.go:Config.AsOBI",
+      "pkg/beyla/config_obi.go:FromOBI",
+      "pkg/beyla/config_obi.go:OverrideOBIGlobalConfig",
+      "pkg/components/beyla.go:RunBeyla",
+      "pkg/components/beyla.go:buildCommonContextInfo",
+      "pkg/helpers/config/convert.go:Convert",
+      "pkg/internal/pipe/instrumenter.go:Build"
+    ],
+    "docs/wiki/pages/02-ENTRYPOINT.md": [
+      "cmd/beyla-schema/main.go:SchemaGenerator",
+      "cmd/beyla/main.go:loadConfig",
+      "cmd/beyla/main.go:logConfig",
+      "cmd/beyla/main.go:main",
+      "cmd/k8s-cache/main.go:main",
+      "pkg/components/beyla.go:RunBeyla",
+      "pkg/components/beyla.go:normalizeConfig",
+      "pkg/components/beyla.go:setupAppO11y",
+      "pkg/components/beyla.go:setupNetO11y",
+      "pkg/components/beyla.go:setupStatsO11y",
+      "pkg/components/beyla.go:setupWebhook",
+      "pkg/components/beyla.go:startHealthCheck",
+      "pkg/internal/appolly/appolly.go:Instrumenter.stop"
+    ],
+    "docs/wiki/pages/03-CONFIGURATION.md": [
+      "cmd/beyla-schema/main.go:SchemaGenerator",
+      "pkg/beyla/config.go:Attributes",
+      "pkg/beyla/config.go:Config",
+      "pkg/beyla/config.go:Config.Validate",
+      "pkg/beyla/config.go:DefaultConfig",
+      "pkg/beyla/config.go:LoadConfig",
+      "pkg/beyla/config.go:SDKInject",
+      "pkg/beyla/config.go:normalizeConfig",
+      "pkg/beyla/config_obi.go:Config.AsOBI",
+      "pkg/beyla/config_obi.go:FromOBI",
+      "pkg/beyla/config_obi.go:OverrideOBIGlobalConfig",
+      "pkg/beyla/config_obi.go:overrideOBI",
+      "pkg/components/beyla.go:buildCommonContextInfo",
+      "pkg/helpers/config/convert.go:Convert"
+    ],
+    "docs/wiki/pages/04-APPO11Y-PIPELINE.md": [
+      "pkg/components/beyla.go:setupAppO11y",
+      "pkg/internal/appolly/appolly.go:Instrumenter",
+      "pkg/internal/appolly/appolly.go:Instrumenter.FindAndInstrument",
+      "pkg/internal/appolly/appolly.go:Instrumenter.ReadAndForward",
+      "pkg/internal/appolly/appolly.go:Instrumenter.instrumentedEventLoop",
+      "pkg/internal/appolly/appolly.go:Instrumenter.stop",
+      "pkg/internal/appolly/appolly.go:New",
+      "pkg/internal/appolly/appolly.go:newRuntimeMetricsQueue",
+      "pkg/internal/appolly/appolly.go:setupKubernetes",
+      "pkg/internal/discover/finder.go:ProcessFinder",
+      "pkg/internal/pipe/instrumenter.go:Build",
+      "pkg/internal/pipe/instrumenter.go:clusterConnectorsSubpipeline",
+      "pkg/internal/pipe/instrumenter.go:sigilExportSubpipeline",
+      "pkg/internal/pipe/proc_pipeline.go:ProcessMetricsSwarmInstancer"
+    ],
+    "docs/wiki/pages/05-EXPORTERS.md": [
+      "pkg/beyla/config_obi.go:OverrideOBIGlobalConfig",
+      "pkg/components/beyla.go:attributeGroups",
+      "pkg/components/beyla.go:internalMetrics",
+      "pkg/export/extraattributes/attr_defs.go:NewBeylaAttrSelector",
+      "pkg/export/extraattributes/metric.go:8",
+      "pkg/export/otel/connect_spans.go:ConnectionSpansExport",
+      "pkg/export/otel/connect_spans.go:GenerateConnectSpans",
+      "pkg/export/otel/metrics_survey.go:SurveyInfoMetrics",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter",
+      "pkg/internal/pipe/proc_pipeline.go:isProcessSubPipeEnabled",
+      "vendor/go.opentelemetry.io/obi/pkg/export/otel/api_dependency.go:apiDepTracker"
+    ],
+    "docs/wiki/pages/06-KUBERNETES-INTEGRATION.md": [
+      "cmd/k8s-cache/main.go:main",
+      "pkg/components/beyla.go:attributeGroups",
+      "pkg/components/beyla.go:buildCommonContextInfo",
+      "pkg/components/beyla.go:buildServiceNameTemplate",
+      "pkg/internal/appolly/appolly.go:refreshK8sInformerCache",
+      "pkg/internal/appolly/appolly.go:setupKubernetes",
+      "pkg/webhook/server.go:NewServer",
+      "pkg/webhook/server.go:Server",
+      "pkg/webhook/server.go:Server.On",
+      "pkg/webhook/server.go:Server.isMyNodeEvent"
+    ],
+    "docs/wiki/pages/07-BUILD-AND-VENDORING.md": [
+      "cmd/beyla-schema/main.go:SchemaGenerator",
+      "cmd/k8s-cache/main.go:main",
+      "pkg/beyla/config.go:Config",
+      "pkg/helpers/config/convert.go:Convert",
+      "vendor/go.opentelemetry.io/obi/pkg/export/otel/api_dependency.go:newAPIDepTracker"
+    ],
+    "docs/wiki/pages/08-OPERATIONS.md": [
+      "cmd/beyla/main.go:logConfig",
+      "cmd/beyla/main.go:main",
+      "pkg/components/beyla.go:internalMetrics",
+      "pkg/components/beyla.go:startHealthCheck",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter",
+      "pkg/internal/appolly/appolly.go:Instrumenter.stop"
+    ],
+    "docs/wiki/pages/kubernetes/k8s-metadata-cache-service.md": [
+      "cmd/k8s-cache/main.go:main",
+      "pkg/components/beyla.go:buildCommonContextInfo",
+      "pkg/helpers/config/convert.go:Convert"
+    ],
+    "docs/wiki/pages/kubernetes/sdk-injection-webhook.md": [
+      "pkg/beyla/config.go:Config",
+      "pkg/webhook/mutator.go:NewPodMutator",
+      "pkg/webhook/mutator.go:PodMutator",
+      "pkg/webhook/mutator.go:PodMutator.CanInstrument",
+      "pkg/webhook/mutator.go:PodMutator.CanInstrumentLanguage",
+      "pkg/webhook/mutator.go:PodMutator.PreloadsSomethingElse",
+      "pkg/webhook/mutator.go:detectLanguageFromContainer",
+      "pkg/webhook/mutator.go:detectLanguageFromPodSpec",
+      "pkg/webhook/mutator.go:languageFromImageName",
+      "pkg/webhook/server.go:NewServer",
+      "pkg/webhook/server.go:Server",
+      "pkg/webhook/server.go:Server.On",
+      "pkg/webhook/server.go:Server.Start",
+      "pkg/webhook/server.go:Server.isMyNodeEvent",
+      "pkg/webhook/server.go:Server.writeStateConfigMap",
+      "pkg/webhook/server.go:loadOwnPod"
+    ],
+    "docs/wiki/pages/obi-integration/config-conversion-reflection.md": [
+      "cmd/k8s-cache/main.go:main",
+      "pkg/beyla/config.go:DefaultConfig",
+      "pkg/beyla/config_obi.go:Config.AsOBI",
+      "pkg/beyla/config_obi.go:FromOBI",
+      "pkg/beyla/config_obi.go:overrideOBI",
+      "pkg/helpers/config/convert.go:8",
+      "pkg/helpers/config/convert.go:Convert",
+      "pkg/helpers/config/convert.go:convert",
+      "pkg/helpers/config/convert.go:convertStruct",
+      "pkg/helpers/config/convert.go:handleFieldConversion"
+    ],
+    "docs/wiki/pages/obi-integration/obi-global-overrides.md": [
+      "pkg/beyla/config_obi.go:OverrideOBIGlobalConfig",
+      "pkg/beyla/config_obi.go:overrideOBI"
+    ],
+    "docs/wiki/pages/obi-integration/vendored-obi-boundary.md": [
+      "pkg/beyla/config_obi.go:Config.AsOBI",
+      "pkg/components/beyla.go:setupNetO11y",
+      "pkg/components/beyla.go:setupStatsO11y",
+      "pkg/internal/pipe/instrumenter.go:Build"
+    ],
+    "docs/wiki/pages/pipeline/cluster-connector-spans.md": [
+      "pkg/export/otel/connect_spans.go:ConnectionSpanAttributes",
+      "pkg/export/otel/connect_spans.go:ConnectionSpansExport",
+      "pkg/export/otel/connect_spans.go:GenerateConnectSpans",
+      "pkg/export/otel/connect_spans.go:GroupConnectionSpans",
+      "pkg/internal/pipe/instrumenter.go:clusterConnectorsSubpipeline"
+    ],
+    "docs/wiki/pages/pipeline/process-discovery-and-survey.md": [
+      "pkg/internal/appolly/appolly.go:Instrumenter.instrumentedEventLoop",
+      "pkg/internal/discover/finder.go:NewProcessFinder",
+      "pkg/internal/discover/finder.go:ProcessFinder",
+      "pkg/internal/discover/finder.go:ProcessFinder.IsInstrumentationEnabled",
+      "pkg/internal/discover/finder.go:ProcessFinder.Start",
+      "pkg/internal/discover/finder.go:ProcessFinder.connectSurveySubPipeline",
+      "pkg/internal/discover/survey.go:SurveyCriteriaMatcherProvider",
+      "pkg/internal/discover/survey.go:surveyCriteria",
+      "pkg/internal/discover/survey.go:surveyExcludingCriteria"
+    ],
+    "docs/wiki/pages/pipeline/process-metrics-subpipeline.md": [
+      "pkg/export/extraattributes/metric.go:8",
+      "pkg/internal/pipe/instrumenter.go:Build",
+      "pkg/internal/pipe/proc_pipeline.go:ProcessMetricsSwarmInstancer",
+      "pkg/internal/pipe/proc_pipeline.go:isProcessSubPipeEnabled"
+    ],
+    "docs/wiki/pages/pipeline/swarm-instancer-model.md": [
+      "pkg/internal/appolly/appolly.go:New",
+      "pkg/internal/pipe/instrumenter.go:Build",
+      "pkg/internal/pipe/instrumenter.go:clusterConnectorsSubpipeline",
+      "pkg/internal/pipe/instrumenter.go:sigilExportSubpipeline",
+      "pkg/internal/pipe/proc_pipeline.go:ProcessMetricsSwarmInstancer"
+    ],
+    "docs/wiki/pages/telemetry/api-dependency-counter.md": [
+      "vendor/go.opentelemetry.io/obi/pkg/export/feature.go:43",
+      "vendor/go.opentelemetry.io/obi/pkg/export/otel/api_dependency.go:apiDepTracker",
+      "vendor/go.opentelemetry.io/obi/pkg/export/otel/api_dependency.go:newAPIDepTracker"
+    ],
+    "docs/wiki/pages/telemetry/feature-gating.md": [
+      "pkg/beyla/config.go:49",
+      "pkg/beyla/config.go:Config.Enabled",
+      "pkg/beyla/config.go:Config.appO11yEnabled",
+      "pkg/beyla/config.go:Config.otelNetO11yEnabled",
+      "pkg/beyla/config.go:Config.otelStatsO11yEnabled",
+      "pkg/beyla/config.go:Config.promNetO11yEnabled",
+      "pkg/beyla/config.go:Config.promStatsO11yEnabled",
+      "pkg/beyla/config.go:Feature",
+      "pkg/components/beyla.go:RunBeyla",
+      "pkg/internal/appolly/appolly.go:newRuntimeMetricsQueue",
+      "pkg/internal/pipe/proc_pipeline.go:isProcessSubPipeEnabled"
+    ],
+    "docs/wiki/pages/telemetry/survey-info-metrics.md": [
+      "pkg/export/otel/metrics_survey.go:SurveyInfoMetrics",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter.attrsFromService",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter.disassociatePIDFromService",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter.onProcessEvent",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter.setupPIDToServiceRelationship",
+      "pkg/export/otel/metrics_survey.go:SurveyMetricsReporter.watchForProcessEvents",
+      "pkg/export/otel/metrics_survey.go:newSurveyMetricsReporter"
+    ]
+  },
+  "schema_version": "v0.7.0"
+}
