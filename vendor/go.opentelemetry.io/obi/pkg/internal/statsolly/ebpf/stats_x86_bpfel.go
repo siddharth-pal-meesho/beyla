@@ -137,44 +137,6 @@ type StatsTcpSuccessfulConnectionT struct {
 	}
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	StatsMapDebugEvents                                        = "debug_events"
-	StatsMapSockRole                                           = "sock_role"
-	StatsMapStatsEvents                                        = "stats_events"
-	StatsMapTcpIoAccum                                         = "tcp_io_accum"
-	StatsMapTcpSendmsgSock                                     = "tcp_sendmsg_sock"
-	StatsProgObiStatsKprobeTcpCleanupRbuf                      = "obi_stats_kprobe_tcp_cleanup_rbuf"
-	StatsProgObiStatsKprobeTcpCloseIoFlush                     = "obi_stats_kprobe_tcp_close_io_flush"
-	StatsProgObiStatsKprobeTcpCloseSrtt                        = "obi_stats_kprobe_tcp_close_srtt"
-	StatsProgObiStatsKprobeTcpSendmsg                          = "obi_stats_kprobe_tcp_sendmsg"
-	StatsProgObiStatsKretprobeTcpSendmsg                       = "obi_stats_kretprobe_tcp_sendmsg"
-	StatsProgObiStatsRawTpTcpRetransmitSkb                     = "obi_stats_raw_tp_tcp_retransmit_skb"
-	StatsProgObiStatsTpInetSockSetStateConnRole                = "obi_stats_tp_inet_sock_set_state_conn_role"
-	StatsProgObiStatsTpInetSockSetStateTcpFailedConnection     = "obi_stats_tp_inet_sock_set_state_tcp_failed_connection"
-	StatsProgObiStatsTpInetSockSetStateTcpSuccessfulConnection = "obi_stats_tp_inet_sock_set_state_tcp_successful_connection"
-	StatsVarG_bpfDebug                                         = "g_bpf_debug"
-	StatsVarG_bpfHeaderPropagation                             = "g_bpf_header_propagation"
-	StatsVarG_bpfLoopEnabled                                   = "g_bpf_loop_enabled"
-	StatsVarG_bpfProbeWriteUserEnabled                         = "g_bpf_probe_write_user_enabled"
-	StatsVarG_bpfTraceparentEnabled                            = "g_bpf_traceparent_enabled"
-	StatsVarG_goH2WriteFailStep                                = "g_go_h2_write_fail_step"
-	StatsVarG_tracesCtxV1Enabled                               = "g_traces_ctx_v1_enabled"
-	StatsVarIp4ip6Prefix                                       = "ip4ip6_prefix"
-	StatsVarStatsWakeupDataBytes                               = "stats_wakeup_data_bytes"
-	StatsVarUnused1                                            = "unused_1"
-	StatsVarUnused2                                            = "unused_2"
-	StatsVarUnused3                                            = "unused_3"
-	StatsVarUnused4                                            = "unused_4"
-	StatsVarUnusedTcpFailedConnection                          = "unused_tcp_failed_connection"
-	StatsVarUnusedTcpIo                                        = "unused_tcp_io"
-	StatsVarUnusedTcpRetransmitT                               = "unused_tcp_retransmit_t"
-	StatsVarUnusedTcpRtt                                       = "unused_tcp_rtt"
-	StatsVarUnusedTcpSuccessfulConnection                      = "unused_tcp_successful_connection"
-)
-
 // LoadStats returns the embedded CollectionSpec for Stats.
 func LoadStats() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_StatsBytes)
@@ -195,7 +157,7 @@ func LoadStats() (*ebpf.CollectionSpec, error) {
 //	*StatsMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadStatsObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadStatsObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadStats()
 	if err != nil {
 		return err

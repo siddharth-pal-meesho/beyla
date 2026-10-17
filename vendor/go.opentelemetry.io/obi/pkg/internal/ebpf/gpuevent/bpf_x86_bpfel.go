@@ -143,74 +143,6 @@ type BpfCudaSizeEventT struct {
 	Device BpfCudaDeviceT
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfMapCudaAllocSizes                   = "cuda_alloc_sizes"
-	BpfMapCudaDeviceInfo                   = "cuda_device_info"
-	BpfMapCudaFreeCtx                      = "cuda_free_ctx"
-	BpfMapCudaIntrospectCtx                = "cuda_introspect_ctx"
-	BpfMapCudaMallocCtx                    = "cuda_malloc_ctx"
-	BpfMapCudaRuntimeLaunchCtx             = "cuda_runtime_launch_ctx"
-	BpfMapCudaSetDeviceCtx                 = "cuda_set_device_ctx"
-	BpfMapCudaThreadDevice                 = "cuda_thread_device"
-	BpfMapDebugEvents                      = "debug_events"
-	BpfMapGpuEvents                        = "gpu_events"
-	BpfMapPidCache                         = "pid_cache"
-	BpfMapValidPids                        = "valid_pids"
-	BpfProgObiCuDeviceGetName              = "obi_cu_device_get_name"
-	BpfProgObiCuDeviceGetNameRet           = "obi_cu_device_get_name_ret"
-	BpfProgObiCuDeviceGetUuid              = "obi_cu_device_get_uuid"
-	BpfProgObiCuDeviceGetUuidRet           = "obi_cu_device_get_uuid_ret"
-	BpfProgObiCuDeviceGetUuidV2            = "obi_cu_device_get_uuid_v2"
-	BpfProgObiCuDeviceGetUuidV2Ret         = "obi_cu_device_get_uuid_v2_ret"
-	BpfProgObiCuGraphLaunch                = "obi_cu_graph_launch"
-	BpfProgObiCuLaunch                     = "obi_cu_launch"
-	BpfProgObiCuLaunchEx                   = "obi_cu_launch_ex"
-	BpfProgObiCudaDeviceSynchronize        = "obi_cuda_device_synchronize"
-	BpfProgObiCudaEventRecord              = "obi_cuda_event_record"
-	BpfProgObiCudaEventRecordWithFlags     = "obi_cuda_event_record_with_flags"
-	BpfProgObiCudaEventSynchronize         = "obi_cuda_event_synchronize"
-	BpfProgObiCudaFree                     = "obi_cuda_free"
-	BpfProgObiCudaFreeRet                  = "obi_cuda_free_ret"
-	BpfProgObiCudaGetDevice                = "obi_cuda_get_device"
-	BpfProgObiCudaGetDeviceProperties      = "obi_cuda_get_device_properties"
-	BpfProgObiCudaGetDevicePropertiesRet   = "obi_cuda_get_device_properties_ret"
-	BpfProgObiCudaGetDevicePropertiesV2    = "obi_cuda_get_device_properties_v2"
-	BpfProgObiCudaGetDevicePropertiesV2Ret = "obi_cuda_get_device_properties_v2_ret"
-	BpfProgObiCudaGetDeviceRet             = "obi_cuda_get_device_ret"
-	BpfProgObiCudaHostRegister             = "obi_cuda_host_register"
-	BpfProgObiCudaLaunch                   = "obi_cuda_launch"
-	BpfProgObiCudaLaunchRet                = "obi_cuda_launch_ret"
-	BpfProgObiCudaMalloc                   = "obi_cuda_malloc"
-	BpfProgObiCudaMallocRet                = "obi_cuda_malloc_ret"
-	BpfProgObiCudaMemcpy                   = "obi_cuda_memcpy"
-	BpfProgObiCudaMemset                   = "obi_cuda_memset"
-	BpfProgObiCudaSetDevice                = "obi_cuda_set_device"
-	BpfProgObiCudaSetDeviceRet             = "obi_cuda_set_device_ret"
-	BpfProgObiCudaStreamCreate             = "obi_cuda_stream_create"
-	BpfProgObiCudaStreamCreateWithFlags    = "obi_cuda_stream_create_with_flags"
-	BpfProgObiCudaStreamCreateWithPriority = "obi_cuda_stream_create_with_priority"
-	BpfProgObiCudaStreamDestroy            = "obi_cuda_stream_destroy"
-	BpfProgObiCudaStreamSynchronize        = "obi_cuda_stream_synchronize"
-	BpfProgObiGraphLaunch                  = "obi_graph_launch"
-	BpfProgObiGraphLaunchRet               = "obi_graph_launch_ret"
-	BpfVarFilterPids                       = "filter_pids"
-	BpfVarG_bpfDebug                       = "g_bpf_debug"
-	BpfVarG_bpfHeaderPropagation           = "g_bpf_header_propagation"
-	BpfVarG_bpfLoopEnabled                 = "g_bpf_loop_enabled"
-	BpfVarG_bpfProbeWriteUserEnabled       = "g_bpf_probe_write_user_enabled"
-	BpfVarG_bpfTraceparentEnabled          = "g_bpf_traceparent_enabled"
-	BpfVarG_goH2WriteFailStep              = "g_go_h2_write_fail_step"
-	BpfVarG_tracesCtxV1Enabled             = "g_traces_ctx_v1_enabled"
-	BpfVarUnusedGpu                        = "unused_gpu"
-	BpfVarUnusedGpu1                       = "unused_gpu1"
-	BpfVarUnusedGpu2                       = "unused_gpu2"
-	BpfVarUnusedGpu3                       = "unused_gpu3"
-	BpfVarUnusedGpu4                       = "unused_gpu4"
-)
-
 // LoadBpf returns the embedded CollectionSpec for Bpf.
 func LoadBpf() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfBytes)
@@ -231,7 +163,7 @@ func LoadBpf() (*ebpf.CollectionSpec, error) {
 //	*BpfMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpf()
 	if err != nil {
 		return err

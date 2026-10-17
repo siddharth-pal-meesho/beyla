@@ -19,18 +19,6 @@ type BpfH2MutationProbeH2TestHelperCalls struct {
 	Pop  uint32
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfH2MutationProbeMapFaultMask                = "fault_mask"
-	BpfH2MutationProbeMapHelperCalls              = "helper_calls"
-	BpfH2MutationProbeMapInvocations              = "invocations"
-	BpfH2MutationProbeMapSockets                  = "sockets"
-	BpfH2MutationProbeProgH2MutationPeer          = "h2_mutation_peer"
-	BpfH2MutationProbeProgH2MutationPeerTwoFrames = "h2_mutation_peer_two_frames"
-)
-
 // LoadBpfH2MutationProbe returns the embedded CollectionSpec for BpfH2MutationProbe.
 func LoadBpfH2MutationProbe() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfH2MutationProbeBytes)
@@ -51,7 +39,7 @@ func LoadBpfH2MutationProbe() (*ebpf.CollectionSpec, error) {
 //	*BpfH2MutationProbeMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfH2MutationProbeObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfH2MutationProbeObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpfH2MutationProbe()
 	if err != nil {
 		return err

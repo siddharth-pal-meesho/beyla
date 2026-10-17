@@ -38,33 +38,6 @@ type BpfObiCtxInfoT struct {
 	SpanId  [8]uint8
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfMapDebugEvents                = "debug_events"
-	BpfMapLogEnricherPids            = "log_enricher_pids"
-	BpfMapLogEventStorage            = "log_event_storage"
-	BpfMapLogEvents                  = "log_events"
-	BpfMapLogPipes                   = "log_pipes"
-	BpfMapPidFd                      = "pid_fd"
-	BpfMapTracesCtxV1                = "traces_ctx_v1"
-	BpfMapZeros                      = "zeros"
-	BpfProgObiKprobeDoWritev         = "obi_kprobe_do_writev"
-	BpfProgObiKprobeKsysWrite        = "obi_kprobe_ksys_write"
-	BpfProgObiKprobePipeWrite        = "obi_kprobe_pipe_write"
-	BpfProgObiKprobeTtyWrite         = "obi_kprobe_tty_write"
-	BpfVarG_bpfDebug                 = "g_bpf_debug"
-	BpfVarG_bpfHeaderPropagation     = "g_bpf_header_propagation"
-	BpfVarG_bpfLoopEnabled           = "g_bpf_loop_enabled"
-	BpfVarG_bpfProbeWriteUserEnabled = "g_bpf_probe_write_user_enabled"
-	BpfVarG_bpfTraceparentEnabled    = "g_bpf_traceparent_enabled"
-	BpfVarG_goH2WriteFailStep        = "g_go_h2_write_fail_step"
-	BpfVarG_tracesCtxV1Enabled       = "g_traces_ctx_v1_enabled"
-	BpfVarLogEventUnused             = "log_event__unused"
-	BpfVarLogPipeKeyUnused           = "log_pipe_key__unused"
-)
-
 // LoadBpf returns the embedded CollectionSpec for Bpf.
 func LoadBpf() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfBytes)
@@ -85,7 +58,7 @@ func LoadBpf() (*ebpf.CollectionSpec, error) {
 //	*BpfMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpf()
 	if err != nil {
 		return err

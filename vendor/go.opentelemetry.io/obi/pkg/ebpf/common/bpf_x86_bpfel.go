@@ -517,38 +517,6 @@ type BpfTcpReqT struct {
 	}
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfMapDebugEvents                = "debug_events"
-	BpfVarG_bpfDebug                 = "g_bpf_debug"
-	BpfVarG_bpfHeaderPropagation     = "g_bpf_header_propagation"
-	BpfVarG_bpfLoopEnabled           = "g_bpf_loop_enabled"
-	BpfVarG_bpfProbeWriteUserEnabled = "g_bpf_probe_write_user_enabled"
-	BpfVarG_bpfTraceparentEnabled    = "g_bpf_traceparent_enabled"
-	BpfVarG_goH2WriteFailStep        = "g_go_h2_write_fail_step"
-	BpfVarG_tracesCtxV1Enabled       = "g_traces_ctx_v1_enabled"
-	BpfVarIp4ip6Prefix               = "ip4ip6_prefix"
-	BpfVarUnused                     = "unused"
-	BpfVarUnused10                   = "unused_10"
-	BpfVarUnused11                   = "unused_11"
-	BpfVarUnused12                   = "unused_12"
-	BpfVarUnused13                   = "unused_13"
-	BpfVarUnused14                   = "unused_14"
-	BpfVarUnused15                   = "unused_15"
-	BpfVarUnused16                   = "unused_16"
-	BpfVarUnused17                   = "unused_17"
-	BpfVarUnused3                    = "unused_3"
-	BpfVarUnused4                    = "unused_4"
-	BpfVarUnused5                    = "unused_5"
-	BpfVarUnused6                    = "unused_6"
-	BpfVarUnused7                    = "unused_7"
-	BpfVarUnused8                    = "unused_8"
-	BpfVarUnused9                    = "unused_9"
-	BpfVarUnusedHttp2                = "unused_http2"
-)
-
 // LoadBpf returns the embedded CollectionSpec for Bpf.
 func LoadBpf() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfBytes)
@@ -569,7 +537,7 @@ func LoadBpf() (*ebpf.CollectionSpec, error) {
 //	*BpfMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpf()
 	if err != nil {
 		return err
