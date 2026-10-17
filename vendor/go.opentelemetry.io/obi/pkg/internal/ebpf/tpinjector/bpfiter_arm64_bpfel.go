@@ -20,27 +20,6 @@ type BpfIterSockPortNs struct {
 	Pad   [2]uint8
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfIterMapDebugEvents                = "debug_events"
-	BpfIterMapIterListeningPorts         = "iter_listening_ports"
-	BpfIterMapSockDir                    = "sock_dir"
-	BpfIterMapSocketCookie               = "socket_cookie"
-	BpfIterMapTrackedSockCookies         = "tracked_sock_cookies"
-	BpfIterProgObiSkIterTcp              = "obi_sk_iter_tcp"
-	BpfIterProgObiSkIterTcpListen        = "obi_sk_iter_tcp_listen"
-	BpfIterVarPnUnused                   = "__pn_unused"
-	BpfIterVarG_bpfDebug                 = "g_bpf_debug"
-	BpfIterVarG_bpfHeaderPropagation     = "g_bpf_header_propagation"
-	BpfIterVarG_bpfLoopEnabled           = "g_bpf_loop_enabled"
-	BpfIterVarG_bpfProbeWriteUserEnabled = "g_bpf_probe_write_user_enabled"
-	BpfIterVarG_bpfTraceparentEnabled    = "g_bpf_traceparent_enabled"
-	BpfIterVarG_goH2WriteFailStep        = "g_go_h2_write_fail_step"
-	BpfIterVarG_tracesCtxV1Enabled       = "g_traces_ctx_v1_enabled"
-)
-
 // LoadBpfIter returns the embedded CollectionSpec for BpfIter.
 func LoadBpfIter() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfIterBytes)
@@ -61,7 +40,7 @@ func LoadBpfIter() (*ebpf.CollectionSpec, error) {
 //	*BpfIterMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfIterObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfIterObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpfIter()
 	if err != nil {
 		return err

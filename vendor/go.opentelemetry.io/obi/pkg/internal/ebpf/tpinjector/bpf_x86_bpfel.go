@@ -297,101 +297,6 @@ type BpfTraceMapKeyT struct {
 	Type uint32
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfMapActiveSslConnections                  = "active_ssl_connections"
-	BpfMapActiveUnixSocks                       = "active_unix_socks"
-	BpfMapCloneMap                              = "clone_map"
-	BpfMapCpSupportConnectInfo                  = "cp_support_connect_info"
-	BpfMapDebugEvents                           = "debug_events"
-	BpfMapExtenderJumpTable                     = "extender_jump_table"
-	BpfMapFdMap                                 = "fd_map"
-	BpfMapFdToConnection                        = "fd_to_connection"
-	BpfMapGoGrpcClientConns                     = "go_grpc_client_conns"
-	BpfMapGoH2OwnedStreams                      = "go_h2_owned_streams"
-	BpfMapGoOffsetsMap                          = "go_offsets_map"
-	BpfMapGoTraceMap                            = "go_trace_map"
-	BpfMapGrpcH2OwnedStreams                    = "grpc_h2_owned_streams"
-	BpfMapH2WriteExpectedStorage                = "h2_write_expected_storage"
-	BpfMapHandledByGoConn                       = "handled_by_go_conn"
-	BpfMapIncomingTraceMap                      = "incoming_trace_map"
-	BpfMapJavaTasks                             = "java_tasks"
-	BpfMapJavaVtThreads                         = "java_vt_threads"
-	BpfMapMsgBufferMem                          = "msg_buffer_mem"
-	BpfMapMsgBuffers                            = "msg_buffers"
-	BpfMapNginxUpstream                         = "nginx_upstream"
-	BpfMapNodeManualCtxShadow                   = "node_manual_ctx_shadow"
-	BpfMapNodejsFdMap                           = "nodejs_fd_map"
-	BpfMapOngoingClientConnections              = "ongoing_client_connections"
-	BpfMapOngoingGoroutines                     = "ongoing_goroutines"
-	BpfMapOngoingGrpcOperateHeaders             = "ongoing_grpc_operate_headers"
-	BpfMapOngoingGrpcTransports                 = "ongoing_grpc_transports"
-	BpfMapOngoingHttp                           = "ongoing_http"
-	BpfMapOngoingHttp2Connections               = "ongoing_http2_connections"
-	BpfMapOngoingServerConnections              = "ongoing_server_connections"
-	BpfMapOngoingSqlQueries                     = "ongoing_sql_queries"
-	BpfMapOngoingTcpReq                         = "ongoing_tcp_req"
-	BpfMapOutgoingTraceMap                      = "outgoing_trace_map"
-	BpfMapPidCache                              = "pid_cache"
-	BpfMapPumaTaskConnections                   = "puma_task_connections"
-	BpfMapPumaWorkerTasks                       = "puma_worker_tasks"
-	BpfMapPythonContextTask                     = "python_context_task"
-	BpfMapPythonTaskGeneration                  = "python_task_generation"
-	BpfMapPythonTaskState                       = "python_task_state"
-	BpfMapPythonThreadState                     = "python_thread_state"
-	BpfMapServerTraces                          = "server_traces"
-	BpfMapServerTracesAux                       = "server_traces_aux"
-	BpfMapSkH2ConnFlag                          = "sk_h2_conn_flag"
-	BpfMapSkH2Flags                             = "sk_h2_flags"
-	BpfMapSkTpInfoPidMap                        = "sk_tp_info_pid_map"
-	BpfMapSockDir                               = "sock_dir"
-	BpfMapSocketCookie                          = "socket_cookie"
-	BpfMapTailcallCtxStorage                    = "tailcall_ctx_storage"
-	BpfMapTpInfoBackupStorage                   = "tp_info_backup_storage"
-	BpfMapTpInfoStorage                         = "tp_info_storage"
-	BpfMapTpStrBufStorage                       = "tp_str_buf_storage"
-	BpfMapTraceMap                              = "trace_map"
-	BpfMapTracesCtxV1                           = "traces_ctx_v1"
-	BpfMapTrackedSockCookies                    = "tracked_sock_cookies"
-	BpfMapValidPids                             = "valid_pids"
-	BpfProgObiPacketExtender                    = "obi_packet_extender"
-	BpfProgObiPacketExtenderCreateH2Tp          = "obi_packet_extender_create_h2_tp"
-	BpfProgObiPacketExtenderCreateTp            = "obi_packet_extender_create_tp"
-	BpfProgObiPacketExtenderDetectH2            = "obi_packet_extender_detect_h2"
-	BpfProgObiPacketExtenderFindExistingH2Tp    = "obi_packet_extender_find_existing_h2_tp"
-	BpfProgObiPacketExtenderFindExistingTp      = "obi_packet_extender_find_existing_tp"
-	BpfProgObiPacketExtenderSniffH2             = "obi_packet_extender_sniff_h2"
-	BpfProgObiPacketExtenderValidateH2Tp        = "obi_packet_extender_validate_h2_tp"
-	BpfProgObiPacketExtenderWriteH2Tp           = "obi_packet_extender_write_h2_tp"
-	BpfProgObiPacketExtenderWriteH2TpNoRollback = "obi_packet_extender_write_h2_tp_no_rollback"
-	BpfProgObiPacketExtenderWriteMsgTp          = "obi_packet_extender_write_msg_tp"
-	BpfProgObiSockmapTracker                    = "obi_sockmap_tracker"
-	BpfVarINVALID_POS                           = "INVALID_POS"
-	BpfVarTP                                    = "TP"
-	BpfVarTP_PREFIX                             = "TP_PREFIX"
-	BpfVarTP_PREFIX_SIZE                        = "TP_PREFIX_SIZE"
-	BpfVarTP_SIZE                               = "TP_SIZE"
-	BpfVarTP_TID_PREFIX                         = "TP_TID_PREFIX"
-	BpfVarTP_TID_PREFIX_SIZE                    = "TP_TID_PREFIX_SIZE"
-	BpfVarDisableBlackBoxCp                     = "disable_black_box_cp"
-	BpfVarFilterPids                            = "filter_pids"
-	BpfVarG_bpfDebug                            = "g_bpf_debug"
-	BpfVarG_bpfHeaderPropagation                = "g_bpf_header_propagation"
-	BpfVarG_bpfLoopEnabled                      = "g_bpf_loop_enabled"
-	BpfVarG_bpfProbeWriteUserEnabled            = "g_bpf_probe_write_user_enabled"
-	BpfVarG_bpfTraceparentEnabled               = "g_bpf_traceparent_enabled"
-	BpfVarG_goH2WriteFailStep                   = "g_go_h2_write_fail_step"
-	BpfVarG_tracesCtxV1Enabled                  = "g_traces_ctx_v1_enabled"
-	BpfVarHighRequestVolume                     = "high_request_volume"
-	BpfVarInjectFlags                           = "inject_flags"
-	BpfVarIp4ip6Prefix                          = "ip4ip6_prefix"
-	BpfVarMaxTransactionTime                    = "max_transaction_time"
-	BpfVarUnused                                = "unused"
-	BpfVarUnusedHttp2                           = "unused_http2"
-)
-
 // LoadBpf returns the embedded CollectionSpec for Bpf.
 func LoadBpf() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfBytes)
@@ -412,7 +317,7 @@ func LoadBpf() (*ebpf.CollectionSpec, error) {
 //	*BpfMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpf()
 	if err != nil {
 		return err

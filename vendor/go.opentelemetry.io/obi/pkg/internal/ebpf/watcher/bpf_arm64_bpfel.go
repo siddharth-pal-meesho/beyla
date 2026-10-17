@@ -19,24 +19,6 @@ type BpfWatchInfoT struct {
 	Payload uint64
 }
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfMapDebugEvents                = "debug_events"
-	BpfMapWatchEvents                = "watch_events"
-	BpfProgObiKprobeSysBind          = "obi_kprobe_sys_bind"
-	BpfVarG_bpfDebug                 = "g_bpf_debug"
-	BpfVarG_bpfHeaderPropagation     = "g_bpf_header_propagation"
-	BpfVarG_bpfLoopEnabled           = "g_bpf_loop_enabled"
-	BpfVarG_bpfProbeWriteUserEnabled = "g_bpf_probe_write_user_enabled"
-	BpfVarG_bpfTraceparentEnabled    = "g_bpf_traceparent_enabled"
-	BpfVarG_goH2WriteFailStep        = "g_go_h2_write_fail_step"
-	BpfVarG_tracesCtxV1Enabled       = "g_traces_ctx_v1_enabled"
-	BpfVarIp4ip6Prefix               = "ip4ip6_prefix"
-	BpfVarUnused2                    = "unused_2"
-)
-
 // LoadBpf returns the embedded CollectionSpec for Bpf.
 func LoadBpf() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfBytes)
@@ -57,7 +39,7 @@ func LoadBpf() (*ebpf.CollectionSpec, error) {
 //	*BpfMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpf()
 	if err != nil {
 		return err

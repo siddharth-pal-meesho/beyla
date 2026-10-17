@@ -12,24 +12,6 @@ import (
 	"github.com/cilium/ebpf"
 )
 
-// Names of all BPF objects in the ELF.
-//
-// Used for safe lookups in a Collection or CollectionSpec.
-const (
-	BpfFionreadFixupMapDebugEvents                = "debug_events"
-	BpfFionreadFixupMapFionreadInflight           = "fionread_inflight"
-	BpfFionreadFixupMapTrackedSockCookies         = "tracked_sock_cookies"
-	BpfFionreadFixupProgObiFionreadFixupEnter     = "obi_fionread_fixup_enter"
-	BpfFionreadFixupProgObiFionreadFixupExit      = "obi_fionread_fixup_exit"
-	BpfFionreadFixupVarG_bpfDebug                 = "g_bpf_debug"
-	BpfFionreadFixupVarG_bpfHeaderPropagation     = "g_bpf_header_propagation"
-	BpfFionreadFixupVarG_bpfLoopEnabled           = "g_bpf_loop_enabled"
-	BpfFionreadFixupVarG_bpfProbeWriteUserEnabled = "g_bpf_probe_write_user_enabled"
-	BpfFionreadFixupVarG_bpfTraceparentEnabled    = "g_bpf_traceparent_enabled"
-	BpfFionreadFixupVarG_goH2WriteFailStep        = "g_go_h2_write_fail_step"
-	BpfFionreadFixupVarG_tracesCtxV1Enabled       = "g_traces_ctx_v1_enabled"
-)
-
 // LoadBpfFionreadFixup returns the embedded CollectionSpec for BpfFionreadFixup.
 func LoadBpfFionreadFixup() (*ebpf.CollectionSpec, error) {
 	reader := bytes.NewReader(_BpfFionreadFixupBytes)
@@ -50,7 +32,7 @@ func LoadBpfFionreadFixup() (*ebpf.CollectionSpec, error) {
 //	*BpfFionreadFixupMaps
 //
 // See ebpf.CollectionSpec.LoadAndAssign documentation for details.
-func LoadBpfFionreadFixupObjects(obj any, opts *ebpf.CollectionOptions) error {
+func LoadBpfFionreadFixupObjects(obj interface{}, opts *ebpf.CollectionOptions) error {
 	spec, err := LoadBpfFionreadFixup()
 	if err != nil {
 		return err
